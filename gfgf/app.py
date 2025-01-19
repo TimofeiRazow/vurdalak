@@ -284,9 +284,22 @@ def save_task():
 @app.route('/tabs')
 def tabs():
     teacher_id = session.get('teacher_id')
+    courses = Course.query.filter_by(teacher_id=teacher_id).all()
+    tasks = []
+    for course in courses:
+        this_tasks = Task.query.filter_by(course_id=course.id).all()
+        for task in this_tasks:
+            tasks.append(task)
     if not teacher_id:
         return redirect('/login_teacher', logged_in=False)
-    return render_template('tabs.html', logged_in=True)
+    return render_template('tab_chooise.html', logged_in=True, courses=courses, tasks=tasks)
+
+
+@app.route('/tab/<task_id>', methods=['GET'])
+def tab(task_id):
+    # Получаем задание по его ID, если его нет - 404
+    task = Task.query.get_or_404(task_id)
+    return render_template('tabs.html', task=task)
 
 @app.route('/about')
 def about():
@@ -380,6 +393,8 @@ def task_page(task_id):
         return jsonify({"error": "Task not found"}), 404
     return render_template('task.html', task_data=task.task_data)
 
+def calculate_score():
+    return 0 # пока что проблема в том что мы не сохраняем task_data
 
 @app.route('/submit_task/<int:task_id>', methods=['POST'])
 def submit_task(task_id):
