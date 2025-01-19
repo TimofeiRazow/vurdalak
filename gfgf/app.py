@@ -299,7 +299,12 @@ def tabs():
 def tab(task_id):
     # Получаем задание по его ID, если его нет - 404
     task = Task.query.get_or_404(task_id)
-    return render_template('tabs.html', task=task)
+    results = Result.query.filter_by(task_id=task_id).all()
+    users = User.query.filter_by(id=task.user_id).all()
+    user_data = []
+    for user in users:
+        user_data.append([user.first_name + ' ' + user.last_name, user.grade])
+    return render_template('tabs.html', task=task, results=results, user_data=user_data)
 
 @app.route('/about')
 def about():

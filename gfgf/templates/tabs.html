@@ -48,91 +48,20 @@
 <table class="student-table">
     <thead>
         <tr>
-            <th>Ник ученика</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-            <th>8</th>
-            <th>9</th>
-            <th>10</th>
+            <th>имя фамилия</th>
+            <th>класс</th>
             <th>Итого</th>
         </tr>
     </thead>
     <tbody>
+        {% for user in user_data %}
         <tr>
-            <td>@PimPirim</td>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
             <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>-</td>
-            <td>+</td>
-            <td>-</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>8 Баллов</td>
+            
         </tr>
-        <tr>
-            <td>@Student2</td>
-            <td>+</td>
-            <td>-</td>
-            <td>-</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>-</td>
-            <td>-</td>
-            <td>+</td>
-            <td>-</td>
-            <td>6 Баллов</td>
-        </tr>
-        <tr>
-            <td>@Student3</td>
-            <td>-</td>
-            <td>-</td>
-            <td>+</td>
-            <td>-</td>
-            <td>+</td>
-            <td>-</td>
-            <td>+</td>
-            <td>+</td>
-            <td>-</td>
-            <td>-</td>
-            <td>4 Балла</td>
-        </tr>
-        <tr>
-            <td>@Student4</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>+</td>
-            <td>10 Баллов</td>
-        </tr>
-        <tr>
-            <td>@Student5</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td>0 Баллов</td>
-        </tr>
+        {% endfor %}
     </tbody>
 </table>
 
