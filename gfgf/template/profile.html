@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='Profile/profile.css')}}">
+    <title>Профиль учителя</title>
+</head>
+<body>
+
+<header>
+    <div class="logo"><img src="{{url_for('static', filename='/img/TOT logo.jpg')}}" alt="Logo"></div>
+    <nav>
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/about">О нас</a></li>
+            <li><a href="/tabs">Таблицы</a></li>
+        </ul>
+    </nav>
+    <div class="buttons">
+        <button onclick="window.location.href='https://web.telegram.org/a/#7674978957'">Бот</button>
+    </div>
+</header>
+
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-avatar-info">
+            <img src="{{ url_for('static', filename=teacher.profile_image) if teacher.profile_image else url_for('static', filename='img/avatar-placeholder.png') }}" alt="Аватар">
+            <div class="info">
+                <h1>{{ teacher.username }}</h1>
+                <p>Email: {{ teacher.email }}</p>
+            </div>
+        </div>
+        <div class="profile-actions">
+            <div class="top-buttons">
+                <a href="/prof_chang" class="course-requests-button">Изменить профиль</a>
+                <button>Посмотреть пароль</button>
+            </div>
+            <div class="bottom-buttons">
+                <a href="/tasks" class="course-requests-button">Добавить задание</a>
+                <a href="/applications" class="course-requests-button">Заявки на курсы</a>
+            </div>
+            <div class="bottom-buttons">
+                <a href="/teacher_dashboard" class="course-requests-button">Добавить курс</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="works-section">
+        <h2>Последние работы учеников</h2>
+        <ul class="works-list">
+            <li>
+                <span class="work-title">Работа 1</span>
+                <div class="work-actions">
+                    <button>Открыть</button>
+                    <button>Комментировать</button>
+                </div>
+            </li>
+            <li>
+                <span class="work-title">Работа 2</span>
+                <div class="work-actions">
+                    <button>Открыть</button>
+                    <button>Комментировать</button>
+                </div>
+            </li>
+            <li>
+                <span class="work-title">Работа 3</span>
+                <div class="work-actions">
+                    <button>Открыть</button>
+                    <button>Комментировать</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+    <div class="works-section">
+        <h2>Последние работы учеников</h2>
+        <ul class="works-list">
+            <li>
+                <span class="work-title">Работа 1</span>
+                <div class="work-actions">
+                    <button>Открыть</button>
+                    <button>Комментировать</button>
+                </div>
+            </li>
+            <li>
+                <span class="work-title">Работа 2</span>
+                <div class="work-actions">
+                    <button>Открыть</button>
+                    <button>Комментировать</button>
+                </div>
+            </li>
+            <li>
+                <span class="work-title">Работа 3</span>
+                <div class="work-actions">
+                    <button>Открыть</button>
+                    <button>Комментировать</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<section class="footer">
+    <div class="footer-top">
+        <div class="logo">
+            <img src="{{url_for('static', filename='/img/TOT logo.jpg')}}" alt="Логотип ТОТ">
+        </div>
+        <div class="footer-links">
+            <a href="https://web.telegram.org/a/#7674978957">Бот в телеграме</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/_artem___p_/">
+                <img src="{{url_for('static', filename='/img/image3.png')}}" alt="Instagram">
+            </a>
+        </div>
+    </div>
+    <div class="footer-middle">
+        <p class="made-by">Сделано командой <strong>ITshechka</strong></p>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Relume. Все права защищены.
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Условия обслуживания</a>
+            <a href="#">Настройки файлов cookie</a>
+        </p>
+    </div>
+</section>
+
+</body>
+</html>

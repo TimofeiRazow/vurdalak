@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Регистрация учителя</h1>
+        <form action="/register_teacher" method="post" enctype="multipart/form-data" class="mt-4">
+            <div class="mb-3">
+                <label for="email" class="form-label">Электронная почта</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Имя пользователя</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="profile_image" class="form-label">Изображение профиля</label>
+                <input type="file" class="form-control" id="profile_image" name="profile_image" accept="image/*">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="/login_teacher">Уже есть аккаунт? Войти</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

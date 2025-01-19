@@ -1,0 +1,844 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+header .logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons .filled {
+    background: black;
+    color: white;
+}
+
+.profile-container {
+    max-width: 1400px; /* Увеличиваем ширину карточки */
+    height: auto; /* Делаем высоту адаптивной */
+    margin: 40px auto; /* Увеличиваем верхний и нижний отступ */
+    background: white;
+    padding: 50px; /* Увеличиваем внутренние отступы */
+    border-radius: 15px; /* Закругляем углы сильнее */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Добавляем тени для объёма */
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column; /* Вертикальная компоновка */
+    align-items: center;
+    margin-bottom: 40px; /* Больше пространства до следующего блока */
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar-info {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Больше пространства между аватаром и текстом */
+    margin-bottom: 30px; /* Расстояние между информацией и кнопками */
+}
+
+.profile-avatar-info img {
+    width: 180px; /* Ещё больше увеличиваем размер аватара */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+
+.profile-avatar-info .info h1 {
+    font-size: 2.5em; /* Более крупный заголовок */
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.profile-avatar-info .info p {
+    font-size: 1.3em;
+    color: #666;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Расстояние между строками кнопок */
+    margin-top: 30px;
+}
+
+.profile-actions .top-buttons,
+.profile-actions .bottom-buttons {
+    display: flex;
+    gap: 20px; /* Расстояние между кнопками в одной строке */
+    justify-content: center;
+}
+
+.profile-actions button {
+    padding: 15px 25px;
+    border: 2px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.profile-actions button:hover {
+    background: black;
+    color: white;
+}
+
+/* Стили для кнопки "Добавить задание" */
+.add-task-button {
+    margin-top: 10px; /* Дополнительное пространство сверху */
+}
+
+
+.works-section {
+    margin-top: 50px; /* Больше расстояния до работ учеников */
+}
+
+.works-section h2 {
+    font-size: 2em; /* Крупный заголовок для блока */
+    margin-bottom: 20px;
+}
+
+.works-list {
+    list-style: none;
+    padding: 0;
+}
+
+.works-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.works-list li:hover {
+    background: #f1f1f1;
+}
+
+.works-list .work-title {
+    font-weight: bold;
+}
+
+.works-list .work-actions button {
+    padding: 5px 10px;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.works-list .work-actions button:hover {
+    background: black;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons .filled {
+    background: black;
+    color: white;
+}
+
+.hero {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.hero .actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero .actions button {
+    padding: 10px 30px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hero .actions button:hover {
+    background: #333;
+    color: white;
+    transition: 0.3s;
+}
+
+.features {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+.feature-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.feature-card p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.feature-card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.feature-card a:hover {
+    text-decoration: underline;
+}
+
+.efficiency-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.efficiency-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.efficiency-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.efficiency-text p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.efficiency-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.efficiency-text ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.efficiency-text ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.efficiency-image {
+    flex: 1;
+    background-color: #e0e0e0;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.efficiency-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.how-it-works {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.how-it-works .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.how-it-works .card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+.how-it-works .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.how-it-works .card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.how-it-works .card p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.how-it-works .card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.how-it-works .card a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 20px 50px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer .footer-links {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+}
+
+.footer .footer-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+.footer .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer .social-icons a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+}
+
+.footer .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+.footer .footer-bottom a {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.footer .footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+.footer-middle .made-by strong {
+    color: #007BFF; /* Синий акцент */
+}
+
+.course-requests-button {
+    display: inline-block;
+    padding: 15px 25px;
+    border: 2px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    color: black; /* Цвет текста */
+    transition: all 0.3s ease;
+}
+
+.course-requests-button:hover {
+    background: black;
+    color: white;
+}
+
+.profile-edit-container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-edit-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form-actions button:hover {
+    background: #0056b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+header .logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons .filled {
+    background: black;
+    color: white;
+}
+
+.profile-container {
+    max-width: 1400px;
+    height: auto;
+    margin: 40px auto;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar-info {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 30px;
+}
+
+.profile-avatar-info img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+
+.profile-avatar-info .info h1 {
+    font-size: 2.5em;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.profile-avatar-info .info p {
+    font-size: 1.3em;
+    color: #666;
+}
+
+.profile-edit-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-edit-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: 2px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    color: black;
+}
+
+.form-actions button:hover {
+    background: black;
+    color: white;
+}
+
+.form-actions .save-button {
+    border: 2px solid black;
+    background: white;
+    color: black;
+}
+
+.form-actions .cancel-button {
+    border: 2px solid black;
+    background: white;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    header .logo img {
+        max-height: 40px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-container {
+        padding: 20px;
+    }
+
+    .profile-avatar-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile-avatar-info img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-avatar-info .info h1 {
+        font-size: 2em;
+    }
+
+    .profile-avatar-info .info p {
+        font-size: 1em;
+    }
+
+    .profile-actions button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .works-section h2 {
+        font-size: 1.5em;
+    }
+
+    .footer {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+
+    .footer .footer-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

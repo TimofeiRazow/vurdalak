@@ -1,0 +1,991 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Обеспечивает, что body всегда будет занимать всю высоту экрана */
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+header .logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons .filled {
+    background: black;
+    color: white;
+}
+
+.profile-container {
+    max-width: 1400px; /* Увеличиваем ширину карточки */
+    height: auto; /* Делаем высоту адаптивной */
+    margin: 40px auto; /* Увеличиваем верхний и нижний отступ */
+    background: white;
+    padding: 50px; /* Увеличиваем внутренние отступы */
+    border-radius: 15px; /* Закругляем углы сильнее */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Добавляем тени для объёма */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Это позволяет контейнеру растягиваться, заполняя оставшееся пространство */
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column; /* Вертикальная компоновка */
+    align-items: center;
+    margin-bottom: 40px; /* Больше пространства до следующего блока */
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar-info {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Больше пространства между аватаром и текстом */
+    margin-bottom: 30px; /* Расстояние между информацией и кнопками */
+}
+
+.profile-avatar-info img {
+    width: 180px; /* Ещё больше увеличиваем размер аватара */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+}
+
+.profile-avatar-info .info h1 {
+    font-size: 2.5em; /* Более крупный заголовок */
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.profile-avatar-info .info p {
+    font-size: 1.3em;
+    color: #666;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Расстояние между строками кнопок */
+    margin-top: 30px;
+}
+
+.profile-actions .top-buttons,
+.profile-actions .bottom-buttons {
+    display: flex;
+    gap: 20px; /* Расстояние между кнопками в одной строке */
+    justify-content: center;
+}
+
+.profile-actions button {
+    padding: 15px 25px;
+    border: 2px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.profile-actions button:hover {
+    background: black;
+    color: white;
+}
+
+/* Стили для кнопки "Добавить задание" */
+.add-task-button {
+    margin-top: 10px; /* Дополнительное пространство сверху */
+}
+
+
+.works-section {
+    margin-top: 50px; /* Больше расстояния до работ учеников */
+}
+
+.works-section h2 {
+    font-size: 2em; /* Крупный заголовок для блока */
+    margin-bottom: 20px;
+}
+
+.works-list {
+    list-style: none;
+    padding: 0;
+}
+
+.works-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.works-list li:hover {
+    background: #f1f1f1;
+}
+
+.works-list .work-title {
+    font-weight: bold;
+}
+
+.works-list .work-actions button {
+    padding: 5px 10px;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.works-list .work-actions button:hover {
+    background: black;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+.question-form {
+  width: 500px;
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.question-text {
+  width: 100%;
+  font-size: 18px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  min-height: 60px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.question-text::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.question-text:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.options {
+  margin-bottom: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.option input[type="radio"] {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+}
+
+.option input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+.question-form{
+    margin: 10px 20px;
+}
+.option input[type="text"]:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.question-form {
+  width: 500px;
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.question-form p {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  min-height: 60px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+
+.add-option {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.add-option:hover {
+  background-color: #45a049;
+}
+
+.add-option:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons .filled {
+    background: black;
+    color: white;
+}
+
+.hero {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.hero .actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero .actions button {
+    padding: 10px 30px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hero .actions button:hover {
+    background: #333;
+    color: white;
+    transition: 0.3s;
+}
+
+.features {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+.feature-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.feature-card p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.feature-card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.feature-card a:hover {
+    text-decoration: underline;
+}
+
+.efficiency-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.efficiency-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.efficiency-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.efficiency-text p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.efficiency-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.efficiency-text ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.efficiency-text ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.efficiency-image {
+    flex: 1;
+    background-color: #e0e0e0;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.efficiency-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.how-it-works {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.how-it-works .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.how-it-works .card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+.how-it-works .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.how-it-works .card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.how-it-works .card p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.how-it-works .card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.how-it-works .card a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    padding: 20px 50px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+}
+
+.footer-middle {
+    margin: 10px 0;
+}
+
+.footer-middle .made-by {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.footer-middle .made-by strong {
+    color: #007BFF; /* Синий акцент */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+.course-requests-button {
+    display: inline-block;
+    padding: 15px 25px;
+    border: 2px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    color: black; /* Цвет текста */
+    transition: all 0.3s ease;
+}
+
+.course-requests-button:hover {
+    background: black;
+    color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.container {
+    display: flex;
+    height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.templates {
+    width: 250px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%); /* Изначально скрыто */
+}
+
+.templates.open {
+    transform: translateX(0); /* Показать при открытии */
+}
+
+.editor {
+    flex-grow: 1;
+    margin-left: 250px;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    background: #4CAF50;
+}
+
+.sidebar {
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.toggle-btn {
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px; /* Располагаем кнопку внизу */
+    left: 50%; /* Центрируем кнопку по горизонтали */
+    transform: translateX(-50%); /* Выравнивание по центру */
+}
+
+.templates {
+    flex: 1;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+}
+
+.templates h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.template-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.template-item {
+    flex: 1 1 calc(33.33% - 10px);
+    height: 100px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.template-item:hover {
+    background: #e0e0e0;
+}
+
+.form-section {
+    flex: 2;
+    padding: 20px;
+}
+
+.form-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-group input[type="file"] {
+    padding: 3px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    border: none;
+    background: black;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background: #333;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    header .logo img {
+        max-height: 40px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .profile-container {
+        padding: 20px;
+    }
+
+    .profile-avatar-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile-avatar-info img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-avatar-info .info h1 {
+        font-size: 2em;
+    }
+
+    .profile-avatar-info .info p {
+        font-size: 1em;
+    }
+
+    .profile-actions button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .works-section h2 {
+        font-size: 1.5em;
+    }
+
+
+
+    .footer .footer-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Обеспечивает, что body всегда будет занимать всю высоту экрана */
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px 50px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: auto; /* Подтягивает подвал вниз */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Это позволяет контейнеру растягиваться, заполняя оставшееся пространство */
+}
+
+.content {
+    flex-grow: 1; /* Это гарантирует, что контент будет занимать оставшееся пространство */
+    padding: 20px;
+    background-color: white;
+}
+
+.footer-bottom {
+    margin-top: auto;
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}

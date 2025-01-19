@@ -1,0 +1,623 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.buttons .filled {
+    background: black;
+    color: white;
+}
+
+.hero {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.hero .actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero .actions button {
+    padding: 10px 30px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hero .actions button:hover {
+    background: #333;
+    color: white;
+    transition: 0.3s;
+}
+
+.features {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+.feature-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.feature-card p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.feature-card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.feature-card a:hover {
+    text-decoration: underline;
+}
+
+.efficiency-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.efficiency-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.efficiency-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.efficiency-text p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.efficiency-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.efficiency-text ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.efficiency-text ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.efficiency-image {
+    flex: 1;
+    background-color: #e0e0e0;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.efficiency-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.how-it-works {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.how-it-works .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.how-it-works .card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: left;
+}
+
+.how-it-works .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.how-it-works .card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.how-it-works .card p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.how-it-works .card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.how-it-works .card a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    padding: 20px 50px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer .footer-links {
+    display: flex;
+    gap: 15px;
+    font-weight: bold;
+}
+
+.footer .footer-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+.footer .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer .social-icons a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+}
+
+.footer .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+.footer .footer-bottom a {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.footer .footer-bottom a:hover {
+    text-decoration: underline;
+}
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+.student-table th, .student-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.student-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.student-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+        .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+    }
+
+    .filter-buttons .filter {
+        padding: 10px 20px;
+        border: 1px solid black;
+        background: transparent;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1em;
+        transition: all 0.3s ease;
+    }
+
+    .filter-buttons .filter:hover {
+        background: black;
+        color: white;
+    }
+
+    .filter-buttons .filter:focus {
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .dropdown-menu div {
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+
+    .dropdown-menu div:hover {
+        background-color: #f4f4f4;
+    }
+
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+        position: relative;
+    }
+    .footer {
+        padding: 20px 50px;
+        background-color: white;
+        border-top: 1px solid #ddd;
+        text-align: center;
+        font-size: 0.9em;
+    }
+    
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-links {
+        display: flex;
+        gap: 15px;
+        font-weight: bold;
+    }
+    
+    .footer-links a {
+        text-decoration: none;
+        color: black;
+        font-size: 1em;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .social-icons a {
+        text-decoration: none;
+        font-size: 1.2em;
+        color: black;
+    }
+    
+    .footer-middle {
+        margin: 10px 0;
+    }
+    
+    .footer-middle .made-by {
+        font-size: 1em;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .footer-middle .made-by strong {
+        color: #007BFF; /* Синий акцент */
+    }
+    
+    .footer-bottom {
+        margin-top: 20px;
+        font-size: 0.8em;
+    }
+    
+    .footer-bottom a {
+        text-decoration: none;
+        color: black;
+        margin-left: 10px;
+    }
+    
+    .footer-bottom a:hover {
+        text-decoration: underline;
+    }    
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .content {
+        flex: 1;
+    }
+
+
+    @media (max-width: 768px) {
+        header {
+            flex-wrap: wrap;
+            padding: 10px 20px;
+        }
+    
+        .hero h1 {
+            font-size: 2em;
+        }
+    
+        .hero p {
+            font-size: 1em;
+        }
+    
+        .feature-card {
+            width: 100%;
+        }
+    
+        .efficiency-section {
+            flex-direction: column;
+            padding: 20px;
+        }
+    
+        .efficiency-text {
+            max-width: 100%;
+        }
+    
+        .how-it-works .cards {
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        .footer {
+            text-align: center;
+        }
+    
+        nav ul {
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+    
+        .buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        .feature-cards {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+    
+        .efficiency-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    
+        .efficiency-text ul li {
+            font-size: 0.9em;
+        }
+    
+        .footer .footer-top {
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        .footer .footer-links,
+        .footer .social-icons {
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        .student-table {
+            font-size: 0.9em;
+        }
+    
+        .student-table th,
+        .student-table td {
+            padding: 5px;
+        }
+    
+        .filter-buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        .dropdown-menu {
+            position: static;
+            width: 100%;
+            box-shadow: none;
+        }
+    
+        .dropdown-menu div {
+            padding: 10px;
+            text-align: center;
+        }
+    
+        .content {
+            padding: 10px;
+        }
+    
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+    
+        .profile-avatar-info {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    
+        .profile-avatar-info img {
+            width: 120px;
+            height: 120px;
+        }
+    
+        .profile-actions {
+            gap: 15px;
+        }
+    
+        .profile-actions .top-buttons,
+        .profile-actions .bottom-buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        .filter-buttons .filter {
+            width: 100%;
+        }
+    }
+    

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Education App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Добро пожаловать в образовательное приложение</h1>
+        <p class="text-center">Выберите подходящий вариант регистрации:</p>
+        <div class="d-flex justify-content-center mt-4">
+            <a href="/register_user" class="btn btn-primary mx-2">Регистрация ученика</a>
+            <a href="/register_teacher" class="btn btn-secondary mx-2">Регистрация учителя</a>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/login_teacher" class="btn btn-outline-dark">Вход для учителей</a>
+        </div>
+        <div id="status">Статус</div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Проверяем доступность Telegram Web Apps
+        if (window.Telegram && Telegram.WebApp.initDataUnsafe) {
+            const user = Telegram.WebApp.initDataUnsafe.user;
+
+            if (user) {
+                const telegramId = user.id;
+                fetch('/register_user', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        telegram_id: telegramId
+                    })
+                })
+                .then(response => {
+                    if (response.ok) {
+                    // Перенаправление на главную страницу
+                        window.location.href = '/login_teacher';
+                    } else {
+                        // Обработка ошибки
+                        response.text().then(text => {
+                            document.getElementById('status').innerText = `Ошибка: ${text}`;
+                        });
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = `Ошибка соединения: ${error.message}`;
+                });
+                // Получаем user.id и заполняем скрытое поле формы
+                alert("Пользователь авторизован через Telegram.")
+            } else {
+                alert("Пользователь не авторизован через Telegram.");
+            }
+        } else {
+            alert("Telegram Web Apps не поддерживается.");
+        }
+    });
+    </script>
+</body>
+</html>

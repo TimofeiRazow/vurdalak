@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация ученика</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Регистрация ученика</h1>
+        <form action="/register_user" method="post" class="mt-4">
+            <!-- Telegram ID (скрытое поле) -->
+            <input type="hidden" id="telegram_id" name="telegram_id" value="">
+
+            <div class="mb-3">
+                <label for="first_name" class="form-label">Имя</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Фамилия</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="class" class="form-label">Класс</label>
+                <input type="text" class="form-control" id="class" name="grade" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="/">Вернуться на главную</a>
+        </div>
+    </div>
+   <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Проверяем доступность Telegram Web Apps
+        if (window.Telegram && Telegram.WebApp.initDataUnsafe) {
+            const user = Telegram.WebApp.initDataUnsafe.user;
+            if (user) {
+                // Получаем user.id и заполняем скрытое поле формы
+                const telegramIdInput = document.getElementById('telegram_id');
+                telegramIdInput.value = user.id;
+                alert("Пользователь авторизован через Telegram.")
+            } else {
+                alert("Пользователь не авторизован через Telegram.");
+            }
+        } else {
+            alert("Telegram Web Apps не поддерживается.");
+        }
+    });
+    </script>
+</body>
+</html>
+

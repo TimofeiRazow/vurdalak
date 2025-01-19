@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание {{ task_id }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h3 {
+            margin: 0 0 10px;
+            color: #555;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin-bottom: 10px;
+        }
+
+        .options input[type="checkbox"],
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .text-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .gap-fill {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .gap-fill input {
+            width: 100px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Задание {{ task_id }}</h1>
+        <form action="/submit_task/{{ task_id }}" method="POST">
+            <input type="hidden" id="telegram_id" name="telegram_id" value="">
+            {% for question in task_data %}
+                <div class="question">
+                    <h3>{{ question.questionText }}</h3>
+                    {% if question.state == 'checkbox' %}
+                        <ul class="options">
+                            {% for option in question.options %}
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="question_{{ loop.index }}[]" value="{{ option }}">
+                                        {{ option }}
+                                    </label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% elif question.state == 'radiobox' %}
+                        <ul class="options">
+                            {% for option in question.options %}
+                                <li>
+                                    <label>
+                                        <input type="radio" name="question_{{ loop.index }}" value="{{ option }}">
+                                        {{ option }}
+                                    </label>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% elif question.state == 'text' %}
+                        <input type="text" name="question_{{ loop.index }}" class="text-input" placeholder="Введите ваш ответ">
+                    {% elif question.state == 'gap-fill' %}
+                        <div class="gap-fill">
+                            {% for gap in question.options %}
+                                <input type="text" name="question_{{ loop.index }}[]" placeholder="{{ gap }}">
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+    </div>
+    <script>
+     document.addEventListener('DOMContentLoaded', function () {
+        // Проверяем доступность Telegram Web Apps
+        if (window.Telegram && Telegram.WebApp.initDataUnsafe) {
+            const user = Telegram.WebApp.initDataUnsafe.user;
+            if (user) {
+                // Получаем user.id и заполняем скрытое поле формы
+                const telegramIdInput = document.getElementById('telegram_id');
+                telegramIdInput.value = user.id;
+            }
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='Main/main.css')}}">
+    <title>Добро пожаловать в мир TOT</title>
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo"><img src="{{url_for('static', filename='/img/TOT logo.jpg')}}" alt="Logo"></div>
+    <nav>
+        <ul>
+            <li><a href="/profile">Профиль</a></li>
+            <li><a href="/about">О нас</a></li>
+            <li><a href="/tabs">Таблицы</a></li>
+        </ul>
+    </nav>
+    <div class="buttons">
+        <button onclick="window.location.href='https://web.telegram.org/a/#7674978957'">Бот</button>
+        <button onclick="location.href='{% if logged_in %}/profile{% else %}/register_teacher{% endif %}'">
+            {% if logged_in %}
+                <img src="{{ url_for('static', filename='img/image2.png') }}" alt="Profile">
+            {% else %}
+                 Войти
+            {% endif %}
+        </button>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Добро пожаловать в мир TOT</h1>
+    <p>TOT — это ваш надежный помощник в обучении. Мы предлагаем уникальные решения для вашего роста и развития.</p>
+    <div class="actions">
+        <!-- Кнопка для перехода на страницу профиля -->
+        <button class="filled" onclick="location.href='/profile'">Профиль</button>
+
+        <!-- Кнопка для перехода на страницу таблиц -->
+        <button onclick="location.href='/tabs'">Таблицы</button>
+    </div>
+</section>
+
+
+<section class="features">
+    <h2>Фильтры для удобной сортировки данных в таблице</h2>
+    <div class="feature-cards">
+        <div class="feature-card">
+            <img src="{{url_for('static', filename='/img/filter_icon.png')}}" alt="Filter Icon">
+            <h3>Используйте фильтры, чтобы найти нужную информацию быстро</h3>
+            <p>Три кнопки фильтрации помогут вам легко организовать данные.</p>
+            <a href="#">Фильтр &gt;</a>
+        </div>
+        <div class="feature-card">
+            <img src="{{url_for('static', filename='/img/filter_icon.png')}}" alt="Filter Icon">
+            <h3>Сортируйте по классу для быстрого доступа к нужной информации</h3>
+            <p>Выберите класс, чтобы отобразить соответствующие данные в таблице.</p>
+            <a href="#">Фильтр &gt;</a>
+        </div>
+        <div class="feature-card">
+            <img src="{{url_for('static', filename='/img/filter_icon.png')}}" alt="Filter Icon">
+            <h3>Выберите предмет для более точной фильтрации информации</h3>
+            <p>Фильтрация по предмету помогает сосредоточиться на нужной теме.</p>
+            <a href="#">Фильтр &gt;</a>
+        </div>
+    </div>
+</section>
+
+<section class="efficiency-section">
+    <div class="efficiency-text">
+        <h2>Эффективные функции для вашего удобства и продуктивности на нашем сайте</h2>
+        <p>Наш сайт предлагает интуитивно понятный интерфейс, который упрощает навигацию. Используйте фильтры для быстрой сортировки информации.</p>
+        <ul>
+            <li><img src="{{url_for('static', filename='/img/image2.png')}}" alt="Icon">Темно-серая цветовая схема для современного вида</li>
+            <li><img src="{{url_for('static', filename='/img/image2.png')}}" alt="Icon">Разнообразные оттенки зеленого для акцентов</li>
+            <li><img src="{{url_for('static', filename='/img/image2.png')}}" alt="Icon">Удобные фильтры для быстрого поиска информации</li>
+        </ul>
+    </div>
+    <div class="efficiency-image">
+        <img src="{{url_for('static', filename='/img/file-MfeM1pzaegjYzQ4vx4Cr8d.png')}}" alt="Example">
+    </div>
+</section>
+
+<section class="how-it-works">
+    <h2>Узнайте, как работает наша система и что она предлагает.</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="{{url_for('static', filename='/img/file-2eKatiwFroQxSx64ohcWiY.png')}}" alt="Card Image">
+            <h3>Эффективные инструменты для управления и анализа данных в одном месте.</h3>
+            <p>Наша таблица предоставляет всю необходимую информацию в удобном формате.</p>
+            <a href="#">Узнать &gt;</a>
+        </div>
+        <div class="card">
+            <img src="{{url_for('static', filename='/img/file-ByiQ4S4chTgFXqcFuVCm5Q.png')}}" alt="Card Image">
+            <h3>Фильтры для быстрого доступа к нужной информации по вашим критериям.</h3>
+            <p>Используйте фильтры, чтобы упростить поиск и анализ данных.</p>
+            <a href="#">Фильтры &gt;</a>
+        </div>
+        <div class="card">
+            <img src="{{url_for('static', filename='/img/file-3mmKr1KxinFSpz9QCJt8Ah.png')}}" alt="Card Image">
+            <h3>Доступ к информации стал проще благодаря интуитивно понятному интерфейсу.</h3>
+            <p>Удобный интерфейс помогает вам быстро находить нужные данные.</p>
+            <a href="#">Начать &gt;</a>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="footer-top">
+        <div class="logo">
+            <img src="{{url_for('static', filename='/img/TOT logo.jpg')}}" alt="Логотип ТОТ">
+        </div>
+        <div class="footer-links">
+            <a href="https://web.telegram.org/a/#7674978957">Бот в телеграме</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/_artem___p_/">
+                <img src="{{url_for('static', filename='/img/image3.png')}}" alt="Instagram">
+            </a>
+        </div>
+    </div>
+    <div class="footer-middle">
+        <p class="made-by">Сделано командой <strong>ITshechka</strong></p>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Relume. Все права защищены.
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Условия обслуживания</a>
+            <a href="#">Настройки файлов cookie</a>
+        </p>
+    </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+        // Проверяем доступность Telegram Web Apps
+        if (window.Telegram && Telegram.WebApp.initDataUnsafe) {
+            const user = Telegram.WebApp.initDataUnsafe.user;
+            if (user) {
+                fetch('/register_user', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        telegram_id: user.id
+                    })
+                })
+                .then(response => {
+                    if (response.ok) {
+                    // Перенаправление на главную страницу
+                        window.location.href = '/user_dashboard';
+                    } else {
+                        // Обработка ошибки
+                        response.text().then(text => {
+                            document.getElementById('status').innerText = `Ошибка: ${text}`;
+                        });
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = `Ошибка соединения: ${error.message}`;
+                });
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

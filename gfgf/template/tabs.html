@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='Tabs/tabs.css')}}">
+    <title>Особая среда</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="{{url_for('static', filename='/img/TOT logo.jpg')}}" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/profile">Профиль</a></li>
+                <li><a href="/about">О нас</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            <button onclick="window.location.href='https://web.telegram.org/a/#7674978957'">Бот</button>
+            <button onclick="location.href='{% if logged_in %}/profile{% else %}/register_teacher{% endif %}'">
+            {% if logged_in %}
+                <img src="{{ url_for('static', filename='img/image2.png') }}" alt="Profile">
+            {% else %}
+                 Войти
+            {% endif %}
+        </button>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="filter-buttons">
+            <button class="filter" onclick="toggleDropdown('class-options')">Класс</button>
+            <button class="filter" onclick="toggleDropdown('subject-options')">Предмет</button>
+            <button class="filter">Успеваемость</button>
+        </div>
+
+        <!-- <div id="class-options" class="dropdown-options">
+            <p>10А</p>
+            <p>10Б</p>
+            <p>11А</p>
+            <p>11Б</p>
+        </div>
+        <div id="subject-options" class="dropdown-options">
+            <p>Искусственный Интеллект</p>
+            <p>Информатика</p>
+        </div> -->
+    </section>
+
+
+<table class="student-table">
+    <thead>
+        <tr>
+            <th>Ник ученика</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>Итого</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@PimPirim</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>-</td>
+            <td>+</td>
+            <td>-</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>8 Баллов</td>
+        </tr>
+        <tr>
+            <td>@Student2</td>
+            <td>+</td>
+            <td>-</td>
+            <td>-</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>-</td>
+            <td>-</td>
+            <td>+</td>
+            <td>-</td>
+            <td>6 Баллов</td>
+        </tr>
+        <tr>
+            <td>@Student3</td>
+            <td>-</td>
+            <td>-</td>
+            <td>+</td>
+            <td>-</td>
+            <td>+</td>
+            <td>-</td>
+            <td>+</td>
+            <td>+</td>
+            <td>-</td>
+            <td>-</td>
+            <td>4 Балла</td>
+        </tr>
+        <tr>
+            <td>@Student4</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>+</td>
+            <td>10 Баллов</td>
+        </tr>
+        <tr>
+            <td>@Student5</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>0 Баллов</td>
+        </tr>
+    </tbody>
+</table>
+
+<section class="footer">
+    <div class="footer-top">
+        <div class="logo">
+            <img src="{{url_for('static', filename='/img/TOT logo.jpg')}}" alt="Логотип ТОТ">
+        </div>
+        <div class="footer-links">
+            <a href="https://web.telegram.org/a/#7674978957">Бот в телеграме</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/_artem___p_/">
+                <img src="{{url_for('static', filename='/img/image3.png')}}" alt="Instagram">
+            </a>
+        </div>
+    </div>
+    <div class="footer-middle">
+        <p class="made-by">Сделано командой <strong>ITshechka</strong></p>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Relume. Все права защищены.
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Условия обслуживания</a>
+            <a href="#">Настройки файлов cookie</a>
+        </p>
+    </div>
+</section>
+
+</body>
+</html>
